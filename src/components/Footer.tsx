@@ -2,16 +2,22 @@ import "./Footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGithub,
-  faDiscord,
-  faReddit,
-  faMastodon,
+  faFacebook,
+  faInstagram,
+  faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { faShirt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faStore,
+  faBolt,
+  faFan,
+} from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
     <footer className="footer" id="footer">
       <div className="footer-inner">
+
         {/* BRAND */}
         <div className="footer-brand">
           <div className="brand">
@@ -19,6 +25,7 @@ export default function Footer() {
               src="/assets/logo-dot.png"
               alt="Great Vision Logo"
               className="brand-logo"
+              loading="lazy"
             />
             <span className="brand-name">
               <span className="brand-great">Great</span>{" "}
@@ -28,45 +35,57 @@ export default function Footer() {
 
           <p className="brand-desc">
             Thanks for visiting our website. This platform is owned and
-            operated by Shivam Electricals.
+            operated by <strong>Shivam Electricals</strong>.
           </p>
         </div>
 
         {/* PRODUCT */}
         <div className="footer-col">
           <h4>PRODUCT</h4>
-          <a href="#">Fan</a>
-          <a href="#">MCB Box</a>
+
+          <Link to="/product/fans">
+            <FontAwesomeIcon icon={faFan} />
+            Fans
+          </Link>
+
+          <Link to="/product/mcb-db">
+            <FontAwesomeIcon icon={faBolt} />
+            MCB Box
+          </Link>
         </div>
 
         {/* COMMUNITY */}
         <div className="footer-col">
           <h4>COMMUNITY</h4>
 
-          <a href="#">
+          <a
+            href="https://github.com/greatvisionapp-arch/great-vision"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FontAwesomeIcon icon={faGithub} />
             GitHub
           </a>
 
-          <a href="#">
-            <FontAwesomeIcon icon={faDiscord} />
-            Discord
+          <a href="#" aria-disabled="true">
+            <FontAwesomeIcon icon={faFacebook} />
+            Facebook
           </a>
 
-          <a href="#">
-            <FontAwesomeIcon icon={faReddit} />
-            Reddit
+          <a href="#" aria-disabled="true">
+            <FontAwesomeIcon icon={faInstagram} />
+            Instagram
           </a>
 
-          <a href="#">
-            <FontAwesomeIcon icon={faMastodon} />
-            Mastodon
+          <a href="#" aria-disabled="true">
+            <FontAwesomeIcon icon={faYoutube} />
+            YouTube
           </a>
 
-          <a href="#">
-            <FontAwesomeIcon icon={faShirt} />
-            Merch
-          </a>
+          <Link to="/store">
+            <FontAwesomeIcon icon={faStore} />
+            Store
+          </Link>
         </div>
 
         {/* LEGAL */}
@@ -77,6 +96,7 @@ export default function Footer() {
           <a href="#">Imprint</a>
           <a href="#">Contact</a>
         </div>
+
       </div>
 
       <div className="footer-bottom">

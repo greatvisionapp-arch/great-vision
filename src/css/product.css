@@ -1,0 +1,55 @@
+/* ================= BACK BUTTON ================= */
+
+.view-product-page .back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 14px;
+  margin-bottom: 28px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
+
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 999px;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* HOVER */
+.view-product-page .back-btn:hover {
+  background: rgba(56, 189, 248, 0.18);
+  transform: translateX(-3px);
+}
+.home-page {
+  flex: 1;            /* ⭐ REAL MAGIC */
+}
+
+/* ACTIVE */
+.view-product-page .back-btn:active {
+  transform: translateX(-6px) scale(0.96);
+}
+
+/* FOCUS (ACCESSIBILITY) */
+.view-product-page .back-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.35);
+}
+
+/* ICON SIZE FIX */
+.view-product-page .back-btn svg {
+  font-size: 12px;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .view-product-page .back-btn {
+    padding: 10px 16px;
+    font-size: 15px;
+  }
+}

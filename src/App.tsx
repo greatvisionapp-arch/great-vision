@@ -30,10 +30,17 @@ function Home() {
       <main className="hero-bg" id="home">
         <section className="hero">
 
-          <div className="hero-badge">
-            <span className="dot" />
-            All major platforms supported →
-          </div>
+          <div
+  className="hero-badge"
+  onClick={() => {
+    const el = document.getElementById("contact");
+    el?.scrollIntoView({ behavior: "smooth" });
+  }}
+>
+  <span className="dot" />
+  All major platforms supported →
+</div>
+
 
           <h1 className="hero-title">
             <span className="great">Great</span>{" "}
