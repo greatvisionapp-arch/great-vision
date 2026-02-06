@@ -11,24 +11,21 @@ import "./Contact.css";
 export default function Contact() {
   return (
     <>
-      {/* ✅ SEO FIX */}
+      {/* SEO */}
       <Helmet>
         <title>Contact Us | Great Vision Electricals</title>
         <meta
           name="description"
           content="Contact Great Vision Electricals in Paliganj. WhatsApp, Instagram, Facebook, or visit our store for electrical products."
         />
-        <link
-          rel="canonical"
-          href="https://shivamelectricals.shop/contact"
-        />
+        <link rel="canonical" href="https://shivamelectricals.shop/contact" />
       </Helmet>
 
+      {/* ❌ NO INLINE BACKGROUND — CSS handles it */}
       <section className="contact">
         <div className="contact-box">
           <h2>Contact with us</h2>
 
-          {/* WhatsApp */}
           <a
             href="https://wa.me/918292890676"
             target="_blank"
@@ -40,7 +37,6 @@ export default function Contact() {
             <FontAwesomeIcon icon={faArrowRight} />
           </a>
 
-          {/* Instagram */}
           <a
             href="https://www.instagram.com/YOUR_USERNAME"
             target="_blank"
@@ -52,7 +48,6 @@ export default function Contact() {
             <FontAwesomeIcon icon={faArrowRight} />
           </a>
 
-          {/* Facebook */}
           <a
             href="https://www.facebook.com/YOUR_PAGE"
             target="_blank"
@@ -64,7 +59,6 @@ export default function Contact() {
             <FontAwesomeIcon icon={faArrowRight} />
           </a>
 
-          {/* Store Location */}
           <a
             href="https://maps.google.com/?q=Shivam+Electricals+Paliganj+Patna"
             target="_blank"

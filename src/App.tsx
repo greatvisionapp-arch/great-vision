@@ -9,7 +9,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Store from "./components/Store";
 import ProductPage from "./components/ProductPage";
-import CookieBanner from "./components/CookieBanner"; // ✅ ADD
+import CookieBanner from "./components/CookieBanner";
 
 function Home() {
   return (
@@ -60,6 +60,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/store" element={<Store />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/product/:slug" element={<ProductPage />} />
       </Routes>
 
@@ -67,7 +68,6 @@ export default function App() {
         <Footer />
       </footer>
 
-      {/* ✅ Cookie Banner always on top of all pages */}
       <CookieBanner />
     </>
   );

@@ -1,9 +1,8 @@
-import React from "react";
-import "./store.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import "./store.css";
 
 type Product = {
   slug: string;
@@ -63,24 +62,22 @@ const products: Product[] = [
   },
 ];
 
-const Store: React.FC = () => {
+export default function Store() {
   const navigate = useNavigate();
 
   return (
     <>
-      {/* ✅ SEO FIX */}
+      {/* SEO */}
       <Helmet>
         <title>Our Store | Great Vision Electricals</title>
         <meta
           name="description"
           content="Explore switches, wires, lights, MCBs, fans and other electrical products at Great Vision Electricals store in Paliganj."
         />
-        <link
-          rel="canonical"
-          href="https://shivamelectricals.shop/store"
-        />
+        <link rel="canonical" href="https://shivamelectricals.shop/store" />
       </Helmet>
 
+      {/* ✅ NO INLINE BACKGROUND — CSS CONTROLS LOOK */}
       <main className="store-page">
         <div className="store-heading">
           <span className="store-badge">
@@ -120,7 +117,13 @@ const Store: React.FC = () => {
             {products.map((p) => (
               <div className="product-card" key={p.slug}>
                 <div className="product-image">
-                  <img src={p.img} alt={p.name} />
+                  <img
+                    src={p.img}
+                    alt={p.name}
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = "/favicon.png";
+                    }}
+                  />
                 </div>
 
                 <h4 className="product-name">{p.name}</h4>
@@ -142,6 +145,4 @@ const Store: React.FC = () => {
       </main>
     </>
   );
-};
-
-export default Store;
+}

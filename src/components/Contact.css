@@ -19,10 +19,10 @@
   max-width: 420px;
 
   display: grid;
-  grid-template-columns: repeat(2, 240px); /* 🔒 PC exact size */
+  grid-template-columns: repeat(2, 240px);
   gap: 12px;
 
-  justify-content: center;   /* grid center */
+  justify-content: center;
   align-content: center;
   text-align: center;
 }
@@ -33,21 +33,28 @@
   margin-bottom: 14px;
   font-size: 18px;
   font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-box h2:hover {
+  color: #7dd3fc;
+  transform: scale(1.05);
 }
 
 /* ================= BOX ================= */
 .box {
   position: relative;
 
-  width: 240px;       /* 🔒 SAME WIDTH */
-  height: 14px;       /* 🔒 SAME HEIGHT */
+  width: 240px;
+  min-height: 48px;          /* ✅ FIX */
+  height: auto;              /* ✅ FIX */
 
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
 
-  padding: 0 10px;
+  padding: 8px 12px;         /* ✅ FIX */
   font-size: 13px;
   cursor: pointer;
 
@@ -99,7 +106,6 @@
 .box span {
   font-weight: 500;
   white-space: nowrap;
-  text-align: center;
 }
 
 /* ================= ICON ================= */
@@ -116,15 +122,15 @@
 
 /* brand hover */
 .box.whatsapp:hover svg:first-child {
-  background: rgba(0, 255, 94, 0.815);
+  background: rgba(0, 255, 94, 0.8);
   transform: rotate(-12deg) scale(1.08);
 }
 .box.instagram:hover svg:first-child {
-  background: rgba(249, 19, 103, 0.744);
+  background: rgba(249, 19, 103, 0.75);
   transform: rotate(-12deg) scale(1.08);
 }
 .box.facebook:hover svg:first-child {
-  background: rgba(24, 118, 242, 0.771);
+  background: rgba(24, 118, 242, 0.77);
   transform: rotate(-12deg) scale(1.08);
 }
 .box.store:hover svg:first-child {
@@ -140,36 +146,19 @@
 /* ================= ANDROID ================= */
 @media (max-width: 480px) {
   .contact-box {
-    grid-template-columns: 1fr; /* 1×4 */
+    grid-template-columns: 1fr;
     max-width: 100%;
   }
 
   .box {
     width: 100%;
     justify-content: space-between;
-    padding: 0 14px;
   }
 }
-/* LINK RESET – font style same rakhe */
+
+/* LINK RESET */
 .contact-box a {
   text-decoration: none;
   color: inherit;
   font: inherit;
-}
-.contact-box h2 {
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.contact-box h2:hover {
-  color: #7dd3fc;          /* light blue hover */
-  transform: scale(1.03); /* subtle pop */
-}
-.contact-box h2 {
-  font-size: 18px; /* normal */
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.contact-box h2:hover {
-  color: #7dd3fc;
-  transform: scale(1.08); /* font size feel */
 }
