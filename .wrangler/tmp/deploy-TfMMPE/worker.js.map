@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["../../../worker.js"],
+  "sourceRoot": "D:\\Shivam Elec web Project\\great-vision\\.wrangler\\tmp\\deploy-TfMMPE",
+  "sourcesContent": ["export default {\r\n  fetch(request, env) {\r\n    return env.ASSETS.fetch(request);\r\n  }\r\n};\r\n"],
+  "mappings": ";AAAA,IAAO,iBAAQ;AAAA,EACb,MAAM,SAAS,KAAK;AAClB,WAAO,IAAI,OAAO,MAAM,OAAO;AAAA,EACjC;AACF;",
+  "names": []
+}
