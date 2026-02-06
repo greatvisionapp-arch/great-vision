@@ -16,27 +16,28 @@ body {
 
 /* ===== Header ===== */
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 50;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  background: linear-gradient(
-    180deg,
-    rgba(11, 15, 26, 0.85),
-    rgba(11, 15, 26, 0.65)
-  );
-  border-bottom: 1px solid rgba(31, 41, 51, 0.6);
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  background: rgba(5, 7, 12, 0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
+/* inner layout remains same */
 .header-inner {
   max-width: 1200px;
-  margin: auto;
-  padding: 14px 20px;
+  margin: 0 auto;
+  padding: 14px 24px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 
 /* ===== Logo ===== */
 .logo {
