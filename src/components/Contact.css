@@ -1,0 +1,175 @@
+/* ================= CONTAINER ================= */
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 12px;
+  background: linear-gradient(
+    180deg,
+    #05070c 0%,
+    #070c18 25%,
+    #0b1a34 55%,
+    #05070c 100%
+  );
+}
+
+/* ================= GRID ================= */
+.contact-box {
+  width: 100%;
+  max-width: 420px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 240px); /* 🔒 PC exact size */
+  gap: 12px;
+
+  justify-content: center;   /* grid center */
+  align-content: center;
+  text-align: center;
+}
+
+/* ================= TITLE ================= */
+.contact-box h2 {
+  grid-column: 1 / -1;
+  margin-bottom: 14px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* ================= BOX ================= */
+.box {
+  position: relative;
+
+  width: 240px;       /* 🔒 SAME WIDTH */
+  height: 14px;       /* 🔒 SAME HEIGHT */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 0 10px;
+  font-size: 13px;
+  cursor: pointer;
+
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.18);
+
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.06),
+    rgba(255,255,255,0.02)
+  );
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+/* ================= TEXTURE ================= */
+.box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(255,255,255,0.04) 0px,
+    rgba(255,255,255,0.04) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  opacity: 0.5;
+}
+
+/* ================= HOVER ================= */
+.box:hover {
+  transform: translateY(-3px);
+  border-color: rgba(125,211,252,0.6);
+  background: linear-gradient(
+    135deg,
+    rgba(125,211,252,0.12),
+    rgba(255,255,255,0.02)
+  );
+}
+
+/* ================= TEXT ================= */
+.box span {
+  font-weight: 500;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* ================= ICON ================= */
+.box svg {
+  width: 16px;
+  height: 16px;
+  padding: 6px;
+
+  border-radius: 8px;
+  background: rgba(255,255,255,0.08);
+
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* brand hover */
+.box.whatsapp:hover svg:first-child {
+  background: rgba(0, 255, 94, 0.815);
+  transform: rotate(-12deg) scale(1.08);
+}
+.box.instagram:hover svg:first-child {
+  background: rgba(249, 19, 103, 0.744);
+  transform: rotate(-12deg) scale(1.08);
+}
+.box.facebook:hover svg:first-child {
+  background: rgba(24, 118, 242, 0.771);
+  transform: rotate(-12deg) scale(1.08);
+}
+.box.store:hover svg:first-child {
+  background: rgba(249, 116, 22, 0.7);
+  transform: rotate(-12deg) scale(1.08);
+}
+
+/* arrow */
+.box:hover svg:last-child {
+  transform: translateX(3px);
+}
+
+/* ================= ANDROID ================= */
+@media (max-width: 480px) {
+  .contact-box {
+    grid-template-columns: 1fr; /* 1×4 */
+    max-width: 100%;
+  }
+
+  .box {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 14px;
+  }
+}
+/* LINK RESET – font style same rakhe */
+.contact-box a {
+  text-decoration: none;
+  color: inherit;
+  font: inherit;
+}
+.contact-box h2 {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-box h2:hover {
+  color: #7dd3fc;          /* light blue hover */
+  transform: scale(1.03); /* subtle pop */
+}
+.contact-box h2 {
+  font-size: 18px; /* normal */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-box h2:hover {
+  color: #7dd3fc;
+  transform: scale(1.08); /* font size feel */
+}

@@ -1,0 +1,113 @@
+.question-section {
+  padding: 90px 20px;
+  text-align: center;
+
+  /* ✅ single, clean background */
+  background: linear-gradient(
+    180deg,
+    #05070c 0%,
+    #070c18 25%,
+    #0b1a34 55%,
+    #05070c 100%
+  );
+}
+
+.question-title {
+  font-size: 34px;        /* ⬇️ balanced */
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.question-subtitle {
+  color: #94a3b8;
+  margin-bottom: 40px;   /* ⬇️ */
+  font-size: 14px;
+}
+
+.question-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+
+  align-items: start;    /* ✅ height jump fix */
+}
+
+.question-item {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.01)
+  );
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+
+  min-height: 56px;      /* ✅ closed height */
+}
+
+.question-btn {
+  width: 100%;
+  padding: 14px 18px;    /* ⬇️ */
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.arrow {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.06);
+  position: relative;
+}
+
+.arrow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 5px;
+  height: 5px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg);
+  transition: transform 0.25s ease;
+}
+
+.question-item.open .arrow::before {
+  transform: rotate(-135deg);
+}
+
+.question-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.question-item.open .question-answer {
+  max-height: 90px;      /* ⬇️ compact open */
+}
+
+.question-answer p {
+  padding: 0 18px 14px;
+  color: #94a3b8;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .question-grid {
+    grid-template-columns: 1fr;
+  }
+}
